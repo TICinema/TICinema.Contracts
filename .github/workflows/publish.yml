@@ -1,4 +1,4 @@
-name: Publish TCinema.Core
+name: Publish TCinema.Contracts
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
 
       # 3. Собираем проект и создаем пакет (.nupkg)
       - name: Build and Pack
-        run: dotnet pack TICinema.Core/TICinema.Core.csproj -c Release -o out
+        run: dotnet pack TICinema.Contracts/TICinema.Contracts.csproj -c Release -o out
 
       # 4. Публикуем пакет на NuGet.org
       - name: Push to NuGet
