@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
-		<PackageId>TCinema.Contracts</PackageId>
+		<PackageId>TICinema.Contracts</PackageId>
 		<Version>1.0.2</Version>
 		<Authors>TICinema</Authors>
 		<Company>TICinema</Company>
