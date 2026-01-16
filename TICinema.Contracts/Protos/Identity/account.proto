@@ -9,6 +9,9 @@ service AccountService {
 
   rpc InitEmailChange (InitEmailChangeRequest) returns (InitEmailChangeResponse);
   rpc ConfirmEmailChange (ConfirmEmailChangeRequest) returns (ConfirmEmailChangeResponse);
+
+  rpc InitPhoneChange (InitPhoneChangeRequest) returns (InitPhoneChangeResponse);
+  rpc ConfirmPhoneChange (ConfirmPhoneChangeRequest) returns (ConfirmPhoneChangeResponse);
 }
 
 message GetAccountRequest {
@@ -47,3 +50,17 @@ message ConfirmEmailChangeRequest {
 message ConfirmEmailChangeResponse {
   bool ok = 1;
 }
+
+// Запросы для телефона
+message InitPhoneChangeRequest {
+  string phone = 1;
+  string user_id = 2;
+}
+message InitPhoneChangeResponse { bool ok = 1; }
+
+message ConfirmPhoneChangeRequest {
+  string phone = 1;
+  string code = 2;
+  string user_id = 3;
+}
+message ConfirmPhoneChangeResponse { bool ok = 1; }
