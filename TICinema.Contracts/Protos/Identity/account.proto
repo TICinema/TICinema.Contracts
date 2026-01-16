@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "TICinema.Contracts.Protos.Identity";
+
+package account;
+
+message GetAccountRequest {
+  string id = 1;
+}
+
+message GetAccountResponse {
+  string id                = 1;
+  string email             = 2;
+  string phone             = 3;
+  bool   is_phone_verified = 4;
+  bool   is_email_verified = 5;
+  Role   role              = 6;
+}
+
+enum Role {
+  USER  = 0;
+  ADMIN = 1;
+}
