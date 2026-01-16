@@ -4,6 +4,10 @@ option csharp_namespace = "TICinema.Contracts.Protos.Identity";
 
 package account;
 
+service AccountService {
+  rpc GetAccount (GetAccountRequest) returns (GetAccountResponse);
+}
+
 message GetAccountRequest {
   string id = 1;
 }
