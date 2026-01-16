@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 
 		<PackageId>TICinema.Contracts</PackageId>
-		<Version>1.0.7</Version>
+		<Version>1.0.8</Version>
 		<Authors>TICinema</Authors>
 		<Company>TICinema</Company>
 		<Description>gRPC contracts for TCinema microservices.</Description>
@@ -24,6 +24,7 @@
 
 	<ItemGroup>
 		<Protobuf Include="Protos\Identity\auth.proto" Pack="true" GrpcServices="Both" />
+		<Protobuf Include="Protos\Identity\account.proto" Pack="true" GrpcServices="Both" />
 	</ItemGroup>
 
 </Project>
