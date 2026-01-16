@@ -6,6 +6,9 @@ package account;
 
 service AccountService {
   rpc GetAccount (GetAccountRequest) returns (GetAccountResponse);
+
+  rpc InitEmailChange (InitEmailChangeRequest) returns (InitEmailChangeResponse);
+  rpc ConfirmEmailChange (ConfirmEmailChangeRequest) returns (ConfirmEmailChangeResponse);
 }
 
 message GetAccountRequest {
@@ -24,4 +27,23 @@ message GetAccountResponse {
 enum Role {
   USER  = 0;
   ADMIN = 1;
+}
+
+message InitEmailChangeRequest {
+  string email = 1;
+  string user_id = 2;
+}
+
+message InitEmailChangeResponse {
+  bool ok = 1;
+}
+
+message ConfirmEmailChangeRequest {
+  string email = 1;
+  string code = 2;
+  string user_id = 3;
+}
+
+message ConfirmEmailChangeResponse {
+  bool ok = 1;
 }
