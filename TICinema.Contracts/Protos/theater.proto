@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "TICinema.Contracts.Protos.Theater";
+
+package theater.v1;
+
+service TheaterService {
+  rpc ListTheaters (ListTheatersRequest) returns (ListTheatersResponse);
+  rpc GetTheater (GetTheaterRequest) returns (GetTheaterResponse);
+}
+
+message ListTheatersRequest {}
+
+message ListTheatersResponse {
+  repeated Theater theaters = 1;
+}
+
+message GetTheaterRequest {
+  string slug = 1;
+}
+
+message GetTheaterResponse {
+  Theater theater = 1;
+}
+
+message Theater {
+  string id = 1;
+  string name = 2;
+  string slug = 3;
+  string address = 4;
+  string location = 5; 
+}
