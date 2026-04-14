@@ -7,7 +7,7 @@ package theater.v1;
 service TheaterService {
   rpc ListTheaters (ListTheatersRequest) returns (ListTheatersResponse);
   rpc GetTheater (GetTheaterRequest) returns (GetTheaterResponse);
-  rpc CreateTheater (CreateTheaterRequest) returns (Theater);
+  rpc CreateTheater (CreateTheaterRequest) returns (CreateTheaterResponse);
 }
 
 message ListTheatersRequest {}
@@ -21,6 +21,10 @@ message GetTheaterRequest {
 }
 
 message GetTheaterResponse {
+  Theater theater = 1;
+}
+
+message CreateTheaterResponse {
   Theater theater = 1;
 }
 

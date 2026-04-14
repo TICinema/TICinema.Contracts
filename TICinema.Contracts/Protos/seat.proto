@@ -1,0 +1,37 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "TICinema.Contracts.Protos.Seat";
+
+package seat.v1;
+
+service SeatService {
+  rpc GetSeat (GetSeatRequest) returns (GetSeatResponse);
+  rpc ListSeatsByHall (ListSeatsRequest) returns (ListSeatsResponse);
+}
+
+message GetSeatRequest {
+  string id = 1;
+}
+
+message GetSeatResponse {
+  Seat seat = 1;
+}
+
+message ListSeatsRequest {
+  string hall_id = 1;
+  string screening_id = 2;
+}
+
+message ListSeatsResponse {
+  repeated Seat seat = 1;
+}
+
+message Seat {
+  string id = 1;
+  string row = 2;
+  int32 number = 3;
+  int32 price = 4;
+  string status = 5;
+  string type = 6;
+  string hall_id = 7;
+}
