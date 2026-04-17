@@ -1,0 +1,52 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "TICinema.Contracts.Protos.Payment";
+
+package payment.v1;
+
+import "google/protobuf/timestamp.proto";
+
+service PaymentService {
+  rpc CreatePayment (CreatePaymentRequest) returns (CreatePaymentResponse);
+
+  rpc GetPayment (GetPaymentRequest) returns (GetPaymentResponse);
+}
+
+message CreatePaymentRequest {
+  string order_id = 1;
+
+  string method = 2;
+
+  int32 amount = 3;
+  string description = 4;
+}
+
+message CreatePaymentResponse {
+  string payment_id = 1;
+
+  string payment_url = 2;
+
+  string token = 3;
+
+  string status = 4;
+}
+
+message GetPaymentRequest {
+  string payment_id = 1;
+}
+
+message GetPaymentResponse {
+  string payment_id = 1;
+
+  string order_id = 2;
+
+  int32 amount = 3;
+
+  string description = 4;
+
+  string status = 5;
+
+  string method = 6;
+
+  google.protobuf.Timestamp created_at = 7;
+}
