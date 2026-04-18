@@ -8,8 +8,17 @@ import "google/protobuf/timestamp.proto";
 
 service PaymentService {
   rpc CreatePayment (CreatePaymentRequest) returns (CreatePaymentResponse);
-
+  rpc UpdatePaymentStatus (UpdatePaymentStatusRequest) returns (UpdatePaymentStatusResponse);
   rpc GetPayment (GetPaymentRequest) returns (GetPaymentResponse);
+}
+
+message UpdatePaymentStatusRequest {
+  string payment_id = 1;
+  string status = 2; // Например, "SUCCESS" или "FAILED"
+}
+
+message UpdatePaymentStatusResponse {
+  bool success = 1;
 }
 
 message CreatePaymentRequest {
