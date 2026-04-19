@@ -33,6 +33,7 @@ message CreateScreeningRequest {
   string hall_id = 2;
   string start_at = 4;
   string end_at = 5;
+  string user_id = 6;
 }
 
 message CreateScreeningResponse {
